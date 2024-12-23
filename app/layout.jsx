@@ -1,3 +1,4 @@
+import { Roboto } from "next/font/google"
 import "@/app/globals.css"
 
 export const metadata = {
@@ -5,10 +6,12 @@ export const metadata = {
   description: 'ToDo List',
 }
 
+const font = Roboto({ subsets : ['latin'], weight : ['100', '300', '400', '500', '700', '900']})
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body className={`${font.className} antialiased`}>{children}</body>
     </html>
   )
 }
