@@ -43,11 +43,11 @@ const Page = () => {
     const value = getTaskLocally(id).checked;
     toggleCheckTask(id, value);
     updateTasks();
-  }
+  };
 
   const getTaskLocally = (id) => {
-    return tasks.find((task) => task.id === id)
-  }
+    return tasks.find((task) => task.id === id);
+  };
 
   // Rendu
 
@@ -62,16 +62,14 @@ const Page = () => {
       <AddInput value={inputValue} onChange={setInputValue} onClick={addTask} />
 
       {/* Titre des tasks */}
-      <div>
-        <div className="flex justify-between items-center">
-          <h2 className="text-center">ToDo</h2>
-          <button
-            className="bg-blue-500 p-2 rounded-lg"
-            onClick={() => updateTasks()}
-          >
-            <RefreshCcw />
-          </button>
-        </div>
+      <div className="flex justify-between items-center">
+        <h2 className="text-center">ToDo</h2>
+        <button
+          className="bg-blue-500 p-2 rounded-lg"
+          onClick={() => updateTasks()}
+        >
+          <RefreshCcw />
+        </button>
       </div>
 
       {/* Affichage des tasks */}
