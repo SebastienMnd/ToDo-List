@@ -11,6 +11,7 @@ import {
   findTasks,
   toggleCheckTask,
 } from "@/lib/database/tasks";
+import { Subtitle, Title } from "@/components/ui/Typography";
 
 const Page = () => {
   // Constantes
@@ -56,16 +57,16 @@ const Page = () => {
   return (
     <div className="container mx-auto flex flex-col gap-4">
       {/* Titre */}
-      <h1 className="text-center">ToDo List</h1>
+      <Title>ToDo List</Title>
 
       {/* Input d'ajout */}
       <AddInput value={inputValue} onChange={setInputValue} onClick={addTask} />
 
       {/* Titre des tasks */}
-      <div className="flex justify-between items-center">
-        <h2 className="text-center">ToDo</h2>
+      <div className="flex justify-center items-center gap-7">
+        <Subtitle>Liste</Subtitle>
         <button
-          className="bg-blue-500 p-2 rounded-lg"
+          className="bg-orange-500 p-2 rounded-lg"
           onClick={() => updateTasks()}
         >
           <RefreshCcw />
